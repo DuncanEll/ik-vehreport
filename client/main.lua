@@ -85,9 +85,19 @@ RegisterNetEvent("ik-vehreports:client:inspectVehicle", function(vehicle)
             mods = Mods
         })
         SetNuiFocus(true, true)
+        TriggerServerEvent('ik-vehreports:server:GetReceipt', vehicleName, plate, engine, brakes, transmission, suspension, armor, turbo)
     end, function() -- Cancel
         ClearProps(PlayerPedId())
     end)
+end)
+
+RegisterNetEvent('showui')
+AddEventHandler('showui', function(Mods)
+    SendNUIMessage({
+        action = "show",
+        mods = Mods
+    })
+    SetNuiFocus(true, true)
 end)
 
 exports['qb-target']:AddGlobalVehicle({

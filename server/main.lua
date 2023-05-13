@@ -13,7 +13,6 @@ QBCore.Functions.CreateCallback("ik-vehreports:server:IsVehicleOwnedByPlayer", f
 	end)
 end)
 
--- Server-side code
 RegisterServerEvent('ik-vehreports:server:GetReceipt')
 AddEventHandler('ik-vehreports:server:GetReceipt', function(vehicleName, plate, engine, brakes, transmission, suspension, armor, turbo)
     local src = source
